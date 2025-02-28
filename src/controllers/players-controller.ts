@@ -1,6 +1,10 @@
 import express,{ Request, Response } from 'express';
+import { getPlayerService } from '../services/players-service';
+import { ok } from '../utils/http-helper';
 
-export const getPlayer =
-(req: Request, res: Response) => {
-    res.status(200).json({player:'Neymar'});
+export const getPlayer = async (req: Request, res: Response) => {
+    const data = await getPlayerService();
+
+    const response = await ok(data);
+    res.status(response.statusCode).json(response.body);
   };
