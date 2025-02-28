@@ -4,7 +4,7 @@ import { getPlayer } from "./controllers/players-controller";
 
 const routes = Router();
 
-routes.get("/", getPlayer);
+routes.get("/players", getPlayer);
 
 
 export default routes;
