@@ -1,4 +1,4 @@
-import express, {Request, Response} from 'express';
+
 import startServer from './app';
 
 
