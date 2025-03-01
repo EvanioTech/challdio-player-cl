@@ -53,3 +53,8 @@ const database: PlayerModel[] = [
     export const findPlayerById = async (id: number): Promise<PlayerModel | null> => {
       return database.find(player => player.id === id) || null;
     };
+
+    export const postPlayer = async (player: PlayerModel): Promise<PlayerModel> => {
+      database.push(player);
+      return player;
+    }

@@ -1,3 +1,4 @@
+import { PlayerModel } from "../models/player-model";
 import * as PlayerRepository from "../repositories/players-repository";
 import { noContent, ok } from "../utils/http-helper";
 
@@ -17,3 +18,33 @@ if (data) {
 
   return response
 };
+
+
+export const getPlayerByIdService = async (id: number) => {
+
+  const data = await PlayerRepository.findPlayerById(id);
+  let response = null
+  
+  
+  if (data) {
+    response = await ok(data);
+  }else{
+    response = await noContent();
+  }
+
+    return response
+  };
+
+
+  export const createPlayerService = async (player: PlayerModel) => {
+   
+   
+    
+    if (player) {
+      
+    }else{
+      return = HttpResponse.noContent();
+    }
+  
+     
+    }
