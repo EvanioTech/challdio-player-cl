@@ -34,3 +34,5 @@ export const getPlayer = async (req: Request, res: Response) => {
     const httpResponse = await deletePlayerService(id);
     res.status(httpResponse.statusCode).json(httpResponse.body);
   };
+
+  
