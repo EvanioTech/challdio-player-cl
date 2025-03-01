@@ -58,3 +58,14 @@ const database: PlayerModel[] = [
       database.push(player);
       return player;
     }
+
+    export const insertPlayer = async (player: PlayerModel): Promise<PlayerModel> => {
+      database.push(player);
+      return player;
+    }
+
+    export const deletePlayer = async (id: number): Promise<PlayerModel[]> => {
+      const playerIndex = database.findIndex(player => player.id === id);
+      database.splice(playerIndex, 1);
+      return database;
+    }
